@@ -1,0 +1,18 @@
+%aside.flash.row
+  %article.col-md-6.col-md-offset-3(flash-alert){ duration: 0, 'active-class':'alert' }
+    {{flash.message}}
+
+%form.form-horizontal.edit-user{ role: 'form'}
+  .form-group{ 'ng-class':"{'has-warning has-feedback': errors.name}"}
+    %label.col-md-2.col-md-offset-2.control-label{for: 'name'} Name
+    .col-md-5
+      %input.form-control{ type:'text', name: 'name', placeholder:'e.g. Baked Alaska', 'ng-model':'section.name' }
+  .form-group{ 'ng-class':"{'has-warning has-feedback': errors.name}"}
+    %label.col-md-2.col-md-offset-2.control-label{ for: 'instructions'} Instructions
+    .col-md-5
+      %textarea.form-control{ name: 'instructions', placeholder:'e.g. Flambé for 20 seconds', 'ng-model':'section.instructions' }
+  .form-group
+    .col-md-3.col-md-offset-2
+      %button.btn.btn-default{ 'ng-click':'cancel()' } Cancel
+    .col-md-4.text-right
+      %button.btn.btn-primary{ 'ng-click': 'save()' } Save
